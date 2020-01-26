@@ -1,0 +1,187 @@
+*::-webkit-input-placeholder{
+  color: $color-grey;
+  opacity: 1;
+}
+
+*:-moz-placeholder{
+  color: $color-grey;
+  opacity: 1;
+}
+*::-moz-placeholder{
+  color: $color-grey;
+  opacity: 1;
+}
+*:-ms-input-placeholder{
+  color: $color-grey;
+  opacity: 1;
+}
+
+::placeholder{color:$color-grey}
+
+input[type="text"] {
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 3px;
+  padding: 0 1.5rem;
+  height: 6rem;
+  border: 1px solid $color-border;
+  transition: all .3s ease-in-out;
+  width: 100%;
+  background: #fff;
+  appearance: none;
+  &:hover {
+    border: 1px solid darken($color-grey, 30%);
+  }
+  &:focus {
+    border: 1px solid $color-text;
+  }
+  &.is-danger {
+    border: 1px solid $color-red!important;
+  }
+}
+
+.radio {
+  vertical-align: top;
+  width: 22px;
+  height: 22px;
+  margin: 0 3px 0 0;
+  & + label {
+    cursor: pointer;
+    display: block;
+    text-align: left;
+    transition: all .3s ease;
+  }
+  &:not(checked) {
+    position: absolute;
+    opacity: 0;
+    &:hover {
+      & + label {
+        color: #fff;
+        &:before {
+          border: 2px solid #fff;
+        }
+      }
+    }
+    & + label {
+      position: relative;
+      padding: 0 0 0 36px;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        transition: all .3s ease;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0;
+        transition: all .2s;
+      }
+    }
+  }
+  &:checked + label:after {
+    opacity: 1;
+  }
+  &:checked + label:before {
+    border: 2px solid #fff;
+  }
+}
+
+.checkbox-wrap {
+  display: flex;
+  .checkbox {
+    display: none;
+    &.is-danger {
+      & + .checkbox-custom {
+        border:1px solid $color-red;
+      }
+    }
+    &:checked {
+      & + .checkbox-custom {
+        border: 1px solid $color-text;
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-border;
+    position: relative;
+    flex-shrink: 0;
+    transition: border .2s ease-in-out;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+      border: 1px solid darken($color-border, 30%);
+    }
+    &:before {
+      opacity: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      bottom: 2px;
+      height: 6px;
+      width: 10px;
+      border-left: 2px solid $color-text;
+      border-bottom: 2px solid $color-text;
+      transform: rotate(-45deg);
+      transition: opacity .2s ease-in-out;
+    }
+  }
+  .label {
+    font-size: 15rem;
+    line-height: 20rem;
+    a {
+      color: $color-text;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  &.color-red {
+    .checkbox {
+      &:checked {
+        & + .checkbox-custom {
+          border: 1px solid $color-red;
+        }
+      }
+    }
+    .checkbox-custom {
+      &:before {
+        border-left: 2px solid $color-red;
+        border-bottom: 2px solid $color-red;
+      }
+    }
+    .label {
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+    }
+    &:hover {
+      .checkbox-custom {
+        border: 1px solid $color-red;
+      }
+      .label {
+        color: $color-red;
+      }
+    }
+  }
+}
+

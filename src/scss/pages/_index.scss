@@ -1,0 +1,24 @@
+.text {
+  @include col();
+  @include size(12);
+  padding: 5rem 0;
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  p {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  ul {
+    display: block;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    li {
+      list-style: disc;
+    }
+  }
+}

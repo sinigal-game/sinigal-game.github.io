@@ -1,0 +1,23 @@
+﻿{% if not title %}
+  {% set title = "Privacy Policy" %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+        {% include '@includes/header.twig' %}
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+        {% include '@includes/footer.twig' %}
+    </div>
+  </body>
+</html>
